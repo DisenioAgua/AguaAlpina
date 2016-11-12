@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <title>Clientes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/AguaAlpina/publica/css/formularios.css" type="text/css">
+  <link rel="stylesheet" href="/AguaAlpina/public/css/bootstrap.css" type="text/css">
+  <script src="/AguaAlpina/public/js/jquery2.js"></script>
 </head>
 <body>
   <div class="container">
-    <p class="well">#password has type of text instead of password just for testing purposes</p>
     <h3>Registration</h3>
     <hr>
     <div class="row">
@@ -42,47 +42,4 @@
     </div>
   </div>
 </body>
-<script src="/AguaAlpina/publica/js/jquery.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-
-  //minimum 8 characters
-  var bad = /(?=.{8,}).*/;
-  //Alpha Numeric plus minimum 8
-  var good = /^(?=\S*?[a-z])(?=\S*?[0-9])\S{8,}$/;
-  //Must contain at least one upper case letter, one lower case letter and (one number OR one special char).
-  var better = /^(?=\S*?[A-Z])(?=\S*?[a-z])((?=\S*?[0-9])|(?=\S*?[^\w\*]))\S{8,}$/;
-  //Must contain at least one upper case letter, one lower case letter and (one number AND one special char).
-  var best = /^(?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9])(?=\S*?[^\w\*])\S{8,}$/;
-
-  $('#password').on('keyup', function () {
-    var password = $(this);
-    var pass = password.val();
-    var passLabel = $('[for="password"]');
-    var stength = 'Weak';
-    var pclass = 'danger';
-    if (best.test(pass) == true) {
-      stength = 'Very Strong';
-      pclass = 'success';
-    } else if (better.test(pass) == true) {
-      stength = 'Strong';
-      pclass = 'warning';
-    } else if (good.test(pass) == true) {
-      stength = 'Almost Strong';
-      pclass = 'warning';
-    } else if (bad.test(pass) == true) {
-      stength = 'Weak';
-    } else {
-      stength = 'Very Weak';
-    }
-
-    var popover = password.attr('data-content', stength).data('bs.popover');
-    popover.setContent();
-    popover.$tip.addClass(popover.options.placement).removeClass('danger success info warning primary').addClass(pclass);
-
-  });
-
-})
-
-</script>
 </html>
