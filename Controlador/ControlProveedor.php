@@ -1,11 +1,11 @@
 <?php
 $bandera=$_POST["bandera"];
 $idbandera=$_POST["idbandera"];
-$cbtipo=$_POST["cbtipo"];
-$txtnomclient=$_POST["txtnomclient"];
-$txtDirclient=$_POST["txtDirclient"];
-$txttelclient=$_POST["txttelclient"];
-$txtcorreoclient=$_POST["txtcorreoclient"];
+$txtnomproveedor=$_POST["txtnomproveedor"];
+$txtDirProv=$_POST["txtDirProv"];
+$txttelProv=$_POST["txttelProv"];
+$txtcorreoProv=$_POST["txtcorreoProv"];
+
 
 
 
@@ -19,18 +19,18 @@ $DAO=new DAO();
 echo "<script language='javascript'>";
 	
 if($bandera=="guardar"){
-		$valor=$DAO->contarDatos($conexion,"select * from tclientes where nomcliente=trim('$txtnomclient')");
+		$valor=$DAO->contarDatos($conexion,"select * from tproveedor where nomprov=trim('$txtnomproveedor')");
 		
 		if($valor>0){
 			echo "sweetAlert.alert('¡¡¡Error!!! Datos ya Existen');";
 		}else{		
 			$estado="activado";
-			$nuevoId=$DAO->ultimoId($conexion,"select idcliente from tclientes order by idcliente");
+			$nuevoId=$DAO->ultimoId($conexion,"select idproveedor from tproveedor order by idproveedor");
 			
 			pg_query("BEGIN;");
 					
 
-			if(!$DAO->add($conexion,"insert into tclientes values ($nuevoId,trim('$cbtipo'),trim('$txtnomclient'),trim('$txtDirclient'),trim('$txttelclient'),trim('$txtcorreoclient'),trim('$estado'))")){
+			if(!$DAO->add($conexion,"insert into tproveedor values ($nuevoId,trim('$txtnomproveedor'),trim('$txtDirProv'),trim('$txttelProv'),trim('$txtcorreoProv'),trim('$estado'))")){
 				pg_query("rollback");
 				echo "sweetAlert.alert('¡¡¡Error!!! No se han Guardado los Datos');";
 			}

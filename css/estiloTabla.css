@@ -1,0 +1,222 @@
+#bienvenida
+{
+background-color: #F5F6CE;
+border: 1px solid #FFBF00;
+border-radius:5px;
+color:#FF8000;
+margin: 0px auto;
+padding:10px 0 0 0;
+text-align: center;
+
+}
+
+#menu{
+background: #00BFFF;
+border:1px solid #01A9DB;
+border-radius: 5px;
+border-bottom-right-radius: 100px;
+border-bottom-left-radius: 100px;
+height: 50px;
+margin:0 auto;
+width:50%;
+-webkit-border-radius: 5px;
+-webkit-border-bottom-right-radius: 100px;
+-webkit-border-bottom-left-radius: 100px;
+-moz-border-radius: 5px;
+-moz-border-radius-bottomright: 100px;
+-moz-border-radius-bottomleft: 100px;
+
+}
+
+/*#menu ul {    
+color:#fff;
+cursor:pointer;
+font-size:15px;
+float:left;
+list-style: none;
+margin-left: 40px;
+}
+#menu li{
+color:#fff;
+cursor:pointer;
+font-size:15px;
+list-style: none;
+margin-left: 40px;   
+}
+#menu ul li:hover {
+color:#F4FA58;
+font-weight: bold;
+}*/
+ul, ol{
+    list-style: none;
+}
+
+.nav li a{
+    background-color: #00BFFF;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 15px;
+    display: block;
+    margin-left: 40px;    
+}
+/*.nav li a{
+color:#DF7401;
+text-decoration: none;
+}*/
+.nav li a:hover{
+    background-color: #434343;
+    color:#FFFF00;
+}
+.nav > li{
+    float: left;
+}
+.nav li ul{
+    display: none;
+    position: absolute;
+    min-width: 140px;
+}
+.nav li:hover > ul{
+    display: block;
+}
+.nav li ul li{
+    position: relative;
+    right: 35px;
+    font-weight: normal;
+}
+.nav li ul li ul {
+    right: -150px;
+    top: 0px;
+}
+#contenedor{
+background-color:#fff;
+border:1px solid #BDBDBD;
+margin: 50px auto 20px;
+min-height: 300px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+width: 70%;
+text-align: center;
+
+}
+.paginadoractivo{
+padding:5px 10px 5px 10px;
+font-family: �Trebuchet MS�, Arial, Helvetica, sans-serif;
+font-size:14px;
+background-color:#F5DAA0;
+color:#000000;
+border:0.5px solid #000000;
+cursor:pointer;
+}
+.paginador{
+padding:5px 10px 5px 10px;
+font-family: �Trebuchet MS�, Arial, Helvetica, sans-serif;
+font-size:14px;
+background-color: #E7F7FF;
+color:#000000;
+border:0.5px solid #333333;
+cursor:pointer;
+
+}
+.paginador:hover{
+padding:5px 10px 5px 10px;
+font-family: �Trebuchet MS�, Arial, Helvetica, sans-serif;
+font-size:14px;
+background-color:#73ADD6;
+color: white ;
+border:0.5px solid #333333;
+cursor:pointer;
+}
+.tablita
+{
+font-size: 14px;
+width:90%;
+text-align: left;
+margin:0 auto;
+border: 1px solid #E6E6E6;
+border-collapse: collapse;
+font-family: �Trebuchet MS�, Arial, sans-serif;
+color: #ffffff;
+}
+.tablita caption
+{
+margin: 10px auto 0;
+font-size: 20px;
+font-weight: bold;
+padding: 5px;
+/* background: #73ADD6 url(�../images/fon_perfil.gif�) repeat-x;*/
+border-right: 1px dotted #06C ;
+/*background: #084B8A;*/
+background: #97be10;
+color: #FFFFFF;
+-webkit-border-top-left-radius: 10px;
+-webkit-border-top-right-radius: 10px;
+-moz-border-radius-topleft: 10px;
+-moz-border-radius-topright: 10px;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+}
+.tablita th
+{
+font-size: 15px;
+font-weight: bold;
+padding: 5px;
+/* background: #73ADD6 url(�../images/fon_perfil.gif�) repeat-x;*/
+border-right: 1px dotted #06C ;
+/*background: #084B8A;*/
+background: #DFF2BF;
+color: #000;
+}
+.tablita td
+{
+padding: 4px;
+color: #494d59;
+
+}
+.tablita tfoot tr td
+{
+font-size: 12px;
+color: #ffffff;
+}
+.tablita tbody tr:hover td
+{
+/* background: #FCFDFE; */
+color:#000;
+background: #DFF2BF;
+}
+.nav>li>a
+{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#tablePagination { 
+            font-size: 14px;
+            width:90%;
+            height: 30px;
+            text-align: left;
+            margin:0 auto;
+            border: 1px solid #E6E6E6;
+            border-collapse: collapse;
+            font-family: �Trebuchet MS�, Arial, sans-serif;
+            color: #333333;
+            background-color: #DCDCDC; 
+            
+          }
+          
+          #tablePagination_paginater { 
+            margin-left: 40px; 
+            margin-right: 40px;
+          }
+          
+          #tablePagination img { 
+            padding: 0px 2px; 
+          }
+          
+          #tablePagination_perPage { 
+            float: left; 
+          }
+          
+          #tablePagination_paginater { 
+            float: right; 
+          }

@@ -7,7 +7,7 @@
       public function conectar(){
          	$server   = "localhost";
   			$puerto   = "5432";
- 			$database = "dbAgua";
+ 			$database = "dbalpina";
   			$usuario  = "postgres";
   			$clave    = "root"; 
 
