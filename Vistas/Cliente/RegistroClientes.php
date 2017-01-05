@@ -18,11 +18,11 @@
 			document.frme.bandera.value="modifycar";
 		else
 			{
-			swal({   title: "Desea Guardar Empleado?",   text: "Si da Clic en Si Guardará Empleado!",   type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",   confirmButtonText: "Si, Guardar!",   cancelButtonText: "No, Guardar!",   closeOnConfirm: false,   closeOnCancel: false }, function(isConfirm){   if (isConfirm) {  
+			swal({   title: "Desea Guardar los Datos?",   text: "Si da Clic en Si Guardará!",   type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",   confirmButtonText: "Si, Guardar!",   cancelButtonText: "No, Guardar!",   closeOnConfirm: false,   closeOnCancel: false }, function(isConfirm){   if (isConfirm) {
 						document.frme.bandera.value="guardar";
-						document.frme.submit();	
+						document.frme.submit();
 			 } else {     swal("Cancelado", "No ha sido Guardado :)", "error");   } });
-			
+
 			}
 		}
 	}
@@ -58,8 +58,8 @@ function soloLetras(e) {
     <th align="right">Tipo de Cliente: </th>
     <td width="203"><select name="cbtipo" id="cbtipo" class="form-control">
     <option value="0">[Seleccionar]</option>
-        <option value="Residencial">Residencial</option>
-        <option value="Empresarial">Empresarial</option>
+        <option value="true">Residencial</option>
+        <option value="false">Empresarial</option>
     </select></td>
   </tr>
   <tr>
@@ -92,5 +92,5 @@ function soloLetras(e) {
 </html>
 <?php
 include "../../Controlador/ControlCliente.php";
-	
+
 ?>

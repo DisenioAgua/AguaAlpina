@@ -18,11 +18,11 @@
 			document.frme.bandera.value="modifycar";
 		else
 			{
-			swal({   title: "Desea Guardar Empleado?",   text: "Si da Clic en Si Guardará Empleado!",   type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",   confirmButtonText: "Si, Guardar!",   cancelButtonText: "No, Guardar!",   closeOnConfirm: false,   closeOnCancel: false }, function(isConfirm){   if (isConfirm) {  
+			swal({   title: "Desea Guardar los Datos?",   text: "Si da Clic en Si Guardará !",   type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",   confirmButtonText: "Si, Guardar!",   cancelButtonText: "No, Guardar!",   closeOnConfirm: false,   closeOnCancel: false }, function(isConfirm){   if (isConfirm) {
 						document.frme.bandera.value="guardar";
-						document.frme.submit();	
+						document.frme.submit();
 			 } else {     swal("Cancelado", "No ha sido Guardado :)", "error");   } });
-			
+
 			}
 		}
 	}
@@ -75,6 +75,23 @@ function soloLetras(e) {
     <td><input type="date" name="txtfechaVehiculo" id="txtfechaVehiculo" class="form-control"></td>
   </tr>
   <tr>
+    <td height="47">Estado: </td>
+    <td width="203"><select name="cbestado" id="cbestado" class="form-control">
+    <option value="0">[Seleccionar]</option>
+        <option value="1">Activo</option>
+        <option value="2">Reparacion</option>
+        <option value="3">Inactivo</option>
+    </select></td>
+  </tr>
+  <tr>
+    <td height="47">Combustible: </td>
+    <td width="203"><select name="cbcombustible" id="cbcombustible" class="form-control">
+    <option value="0">[Seleccionar]</option>
+        <option value=TRUE>Gasolina</option>
+        <option value=FALSE>Diesel</option>
+    </select></td>
+  </tr>
+  <tr>
     <td height="62"><input type="button" class=" btn btn-info" name="guardar" id="guardar" value="Guardar" onClick="validacion()"></td>
     <td><input type="button" class="btn btn-info" name="guardar" id="guardar" value="Limpiar"></td>
   </tr>
@@ -85,5 +102,5 @@ function soloLetras(e) {
 </html>
 <?php
 include "../../Controlador/ControlVehiculo.php";
-	
+
 ?>

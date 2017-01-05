@@ -1,10 +1,48 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sin título</title>
-</head>
+<?php
 
-<body>
-</body>
-</html>
+$bandera=$_POST["bandera"];
+$idbandera=$_POST["idbandera"];
+$txtnomE=$_POST["txtnomE"];
+$txtapeE=$_POST["txtapeE"];
+$cbsexo=$_POST["cbsexo"];
+$txtDui=$_POST["txtDui"];
+$txtDir=$_POST["txtDir"];
+$txttelE=$_POST["txttelE"];
+$cbcargo=$_POST["cbcargo"];
+$txtfecha=$_POST["txtfecha"];
+$txtsalario=$_POST["txtsalario"];
+$txtpassword=$_POST["txtpassword"];
+$cbAsigVehiculo=$_POST["cbAsigVehiculo"];
+
+include_once ("../../Modelo/Conexion.php");
+include_once ("../../Modelo/DAO.php");
+
+$conexions=new Conexion();
+$conexion=$conexions->conectar();
+$DAO=new DAO();
+
+echo "<script language='javascript'>";
+
+if($bandera=="guardar"){
+		$valor=$DAO->contarDatos($conexion,"select * from templeado where nombre=trim('$txtnomE')");
+
+		if($valor>0){
+			echo "sweetAlert.alert('¡¡¡Error!!! Datos ya Existen');";
+		}else{
+				$nuevoId=$DAO->ultimoId($conexion,"select id from templeado order by id");
+
+			//$nuevoId=$DAO->ultimoId($conexion,"select idcargo from templeado order by codigo");
+
+			pg_query("BEGIN;");
+			if(!$DAO->add($conexion,"insert into templeado values ($nuevoId,trim('$txtnomE'),trim('$txtapeE'),trim('$txtDui'),$cbsexo,trim('$txtDir'),$cbcargo,$txtsalario,trim('$txtusuario'),trim('$txtpasswoord'),$cbAsigVehiculo,'$txtfecha',trim('$txttelE'))")){
+				pg_query("rollback");
+				echo "sweetAlert.alert('¡¡¡Error!!! No se han Guardado los Datos');";
+			}
+			else {
+				pg_query("commit");
+				echo "sweetAlert.alert('guardados');";
+
+			}
+		}
+
+	}

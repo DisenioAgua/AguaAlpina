@@ -12,17 +12,17 @@
 <script>
 // funcion para validar y enviar
  function validacion(){
-	if(document.frme.txtcodigo.value=="" || document.frme.txtdetalle.value=="" || document.frme.txtstock.value=="")sweetAlert("Advertencia","Complete Los Campos", "error");
+	if( document.frme.txtCodigo.value=="" ||document.frme.txtdetalle.value=="" || document.frme.txtstock.value=="")sweetAlert("Advertencia","Complete Los Campos", "error");
 	else{
 		if(document.frme.idbandera.value!="")
 			document.frme.bandera.value="modifycar";
 		else
 			{
-			swal({   title: "Desea Guardar Producto?",   text: "Si da Clic en Si Guardará Empleado!",   type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",   confirmButtonText: "Si, Guardar!",   cancelButtonText: "No, Guardar!",   closeOnConfirm: false,   closeOnCancel: false }, function(isConfirm){   if (isConfirm) {  
+			swal({   title: "Desea Guardar Producto?",   text: "Si da Clic en Si Guardará Empleado!",   type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",   confirmButtonText: "Si, Guardar!",   cancelButtonText: "No, Guardar!",   closeOnConfirm: false,   closeOnCancel: false }, function(isConfirm){   if (isConfirm) {
 						document.frme.bandera.value="guardar";
-						document.frme.submit();	
+						document.frme.submit();
 			 } else {     swal("Cancelado", "No ha sido Guardado :)", "error");   } });
-			
+
 			}
 		}
 	}
@@ -65,19 +65,19 @@ function controltag(e) {
 <input type="hidden" name="idbandera" id="idbandera">
 <table width="289" height="144" border="0" align="center">
   <tr>
-    <td width="56" height="46">Codigo:</td>
-    <td width="223"><input type="text" class="form-control" name="txtcodigo" id="txtcodigo" onkeypress="return controltag(event)" placeholder="00000" autocomplete="off"></td>
+    <td height="54">Codigo:</td>
+    <td><input name="txtCodigo" class="form-control" id="txtCodigo" placeholder="Nombre"/></td>
   </tr>
   <tr>
-    <td height="54">Detalle:</td>
-    <td><textarea name="txtdetalle" class="form-control" id="txtdetalle" placeholder="detalles"></textarea></td>
+    <td height="54">Nombre:</td>
+    <td><input name="txtdetalle" class="form-control" id="txtdetalle" placeholder="Nombre"/></td>
   </tr>
   <tr>
     <td height="54">Stock Minimo:</td>
     <td><input name="txtstock" class="form-control" id="txtstock" placeholder="000" type="text" autocomplete="off"></td>
   </tr>
   <tr>
- 
+
     <td><p>&nbsp;
       </p>
       <p>
@@ -96,5 +96,5 @@ function controltag(e) {
 </html>
 <?php
 include "../../Controlador/ControlProducto.php";
-	
+
 ?>
